@@ -7,6 +7,11 @@ describe("should render correctly", () => {
     const ulElement = await screen.findByRole('list');
     expect(ulElement).toBeInTheDocument();
   });
+  test('should a list of users', async () => { 
+    render(<Users />);
+    const users = await screen.findAllByRole('listitem')
+    expect(users).toHaveLength(3);
+   })
  
 });
 
